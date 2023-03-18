@@ -1,0 +1,135 @@
+.header {
+    position: relative;
+    z-index: 9;
+    &-top {
+        padding-top: 50px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 1.25;
+
+        @include tablet {
+            padding-top: 25px;
+        }
+        @include mobile {
+            padding-top: 25px;
+        }
+    }
+    &__menu {
+        display: flex;
+        align-items: center;
+        flex-grow: 1;
+        justify-content: flex-end;
+
+        @include tablet {
+            display: none;
+
+            .menu-opened & {
+                display: block;
+                position: fixed;
+                left: 0;
+                top: 0;
+                padding: 10px;
+                width: 100%;
+                max-width: 320px;
+                z-index: 99;
+                background: linear-gradient(90deg, #c0b7e8 0%, #c0b7e8 100%);
+                overflow-y: auto;
+                overflow-x: hidden;
+            }
+        }
+    }
+}
+
+.logo {
+    position: relative;
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    flex-shrink: 0;
+
+    @include mobile {
+        gap: 10px;
+
+        img {
+            &:first-child {
+                width: 70px;
+            }
+            &:last-child {
+                width: 40px;
+            }
+        }
+    }
+}
+
+.menu-btn {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 33px;
+    height: 26px;
+    background: none;
+
+    @include tablet {
+        display: flex;
+    }
+
+    span,
+    &::before,
+    &::after {
+        content: "";
+        height: 4px;
+        border-radius: 2px;
+        background: $mainGradient;
+    }
+
+    &::before,
+    &::after {
+        width: 100%;
+    }
+
+    span {
+        width: 75%;
+        margin-left: auto;
+        transition: 0.3s;
+    }
+
+    &:hover {
+        span {
+            width: 100%;
+        }
+    }
+}
+
+.menu {
+    margin: 0 auto;
+    &_list {
+        display: flex;
+        align-items: center;
+        gap: 42px;
+
+        @include tablet {
+            display: block;
+            li {
+                margin-bottom: 15px;
+            }
+        }
+    }
+}
+.contacts {
+    display: flex;
+    gap: 38px;
+
+    @include tablet {
+        display: block;
+        right: 0;
+        bottom: -100%;
+
+        .btn {
+            margin-bottom: 15px;
+        }
+    }
+}

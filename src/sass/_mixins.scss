@@ -1,0 +1,45 @@
+@mixin mobile {
+    @media (max-width: 599px) {
+        @content;
+    }
+}
+@mixin tablet {
+    @media (max-width: 1023px) {
+        @content;
+    }
+}
+@mixin laptop {
+    @media (max-width: 1279px) {
+        @content;
+    }
+}
+
+@mixin text-gradient {
+    background: $mainGradient;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+@mixin elipsis($line) {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $line;
+}
+
+@mixin borderGradient($width) {
+    border-left-width: $width;
+    border-left-style: solid;
+    border-image: $borderGradient;
+}
+@mixin borderTopGradient($width) {
+    border-top-width: $width;
+    border-top-style: solid;
+    border-image: $borderTopBottomGradient;
+}
+
+@mixin borderBottomGradient($width) {
+    border-bottom-width: $width;
+    border-bottom-style: solid;
+    border-image: $borderTopBottomGradient;
+}

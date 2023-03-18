@@ -1,0 +1,131 @@
+.footer {
+    position: relative;
+    &::after,
+    &::before {
+        content: "";
+        left: 0;
+        right: 0;
+        bottom: 0;
+        position: absolute;
+        z-index: 1;
+        background-repeat: no-repeat;
+        background-position: center 0;
+        
+    }
+    &::before {
+        top: -85%;
+        background-image: url("../assets/images/footer-bg1.svg");
+        @include tablet{
+            top:-15%;
+            background-size: 200% auto;
+        }
+    }
+    &::after {
+        top: -12%;
+        background-image: url("../assets/images/footer-bg2.svg");
+        @include tablet{
+            top:5%;
+            background-size: 200% auto;
+        }
+    }
+
+    .container {
+        position: relative;
+        z-index: 2;
+    }
+    &_top {
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 70px;
+
+        @include tablet {
+            display: block;
+            text-align: center;
+            padding-bottom: 60px;
+        }
+    }
+    &_logo {
+        height: 184px;
+        width: 186px;
+        max-width: 100%;
+        vertical-align: middle;
+        @include tablet {
+            img {
+                height: 184px;
+                width: 186px;
+                max-width: 100%;
+                text-align: center;
+            }
+        }
+    }
+    &_menu {
+        @include borderGradient(6px);
+        padding-left: 81px;
+
+        @include tablet {
+            display: none;
+        }
+    }
+    &_list_conditions {
+        @include borderGradient(6px);
+        padding-left: 107px;
+        @include tablet {
+            display: none;
+        }
+    }
+    .social {
+        @include borderGradient(6px);
+        padding-left: 71px;
+
+        @include tablet {
+            border: 0;
+            padding: 0;
+            margin-top: 30px;
+        }
+
+        .btn {
+            padding: 16px 38px;
+            @include tablet {
+                padding: 19px 72px;
+            }
+        }
+
+        &_list {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 50px;
+            margin-top: 39px;
+
+            li {
+                padding: 0 10px;
+            }
+            .icon-social {
+                font-size: 32px;
+                color: #c0b7e8;
+            }
+        }
+    }
+    .item {
+        font-weight: 700;
+        font-size: 16px;
+        &:not(:last-child) {
+            margin-bottom: 20px;
+        }
+    }
+    &_bottom {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 50px 0;
+        font-weight: 700;
+        font-size: 14px;
+        @include borderTopGradient(1px);
+
+        @include tablet {
+            margin: 0 58px 89px;
+            text-align: center;
+            line-height: 2.5;
+            font-size: 14px;
+        }
+    }
+}

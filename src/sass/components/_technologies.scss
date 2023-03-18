@@ -1,0 +1,123 @@
+.technologies {
+    &_title {
+        background-image: url("../assets/images/tech-bg.png");
+        background-size: cover;
+        background-position: 50%;
+        background-repeat: no-repeat;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        min-height: 100%;
+        height: 310px;
+        position: relative;
+        .icon_down {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translate(-50%, 50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(267.61deg, #c0b7e8 -0.6%, #8176af 98.31%);
+            box-shadow: 0px 0px 0px 15px rgba(0, 0, 0, 0.25);
+            border-radius: 50%;
+
+            span {
+                font-size: 44px;
+                color: #433d60;
+            }
+        }
+    }
+
+    &_list {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 60px;
+
+        .swiper-slide {
+            flex-shrink: 1;
+            flex-basis: 25%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+    &_item {
+    }
+    .swiper-button-next,
+    .swiper-button-prev {
+        display: none;
+    }
+}
+
+@include tablet {
+    .technologies {
+        margin-top: 30px;
+        &_title {
+            background-size: cover;
+            border-radius: 80px;
+            height: 163px;
+            max-width: 100%;
+            .icon_down {
+                display: none;
+            }
+            .title {
+                font-size: 16px;
+                margin: 0;
+                span {
+                    font-size: 26px;
+                }
+            }
+        }
+        &_list {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            margin-top: 0;
+            .swiper-slide {
+                flex-shrink: 0;
+                flex-basis: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+        &_item {
+            flex-basis: 100%;
+        }
+
+        .technologies-slider {
+            position: relative;
+            .swiper-button-next,
+            .swiper-button-prev {
+                position: absolute;
+                display: flex;
+                z-index: 100;
+                align-items: center;
+                justify-content: center;
+                color: #000;
+                width: 44px;
+                height: 44px;
+                font-weight: 700;
+                box-shadow: 0px 0px 0px 9px rgba(0, 0, 0, 0.2);
+                border-radius: 50%;
+                padding: 13px;
+                background: linear-gradient(267.61deg, #c0b7e8 -0.6%, #8176af 98.31%);
+                &::after {
+                    font-size: 15px;
+                    font-weight: 700;
+                }
+            }
+            .swiper-button-next {
+                right: -9px;
+            }
+            .swiper-button-prev {
+                left: -9px;
+            }
+        }
+    }
+}

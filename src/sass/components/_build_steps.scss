@@ -1,0 +1,101 @@
+.build_steps {
+    margin-top: 80px;
+    .container{
+        position: relative;
+        z-index: 2;
+    }
+    @include tablet {
+        margin: 0;
+    }
+    .swiper-button-prev,
+    .swiper-button-next {
+        display: none;
+    }
+    .build {
+        margin: 100px 0;
+        @include tablet {
+            margin: 37px;
+        }
+    }
+    .steps_of_build {
+        background-image: url("../assets/images/build-steps-bg.svg");
+        background-repeat: no-repeat;
+        background-position: center 0;
+        @include tablet {
+            background-image: none;
+        }
+    }
+    &_list {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &_item {
+        flex-basis: 25%;
+
+        &_num {
+            margin: 18px auto;
+            height: 160px;
+            width: 160px;
+            background: linear-gradient(267.61deg, #c0b7e8 -0.6%, #8176af 98.31%);
+            box-shadow: 0px 0px 0px 18px rgba(0, 0, 0, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #343045;
+            font-size: 64px;
+            font-weight: 700;
+            margin-bottom: 25px;
+        }
+        &_content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 700;
+            svg {
+                margin-right: 15px;
+            }
+        }
+    }
+}
+
+@include tablet {
+    .build_steps {
+        .swiper-button-prev,
+        .swiper-button-next {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #433d60;
+            width: 44px;
+            height: 44px;
+            box-shadow: 0px 0px 0px 9px rgba(0, 0, 0, 0.3);
+            border-radius: 50%;
+            padding: 13px;
+            background: linear-gradient(267.61deg, #c0b7e8 -0.6%, #8176af 98.31%);
+            bottom: 0;
+            top: auto;
+            margin-bottom: 10px;
+
+            &::after {
+                font-size: 15px;
+                font-weight: 700;
+            }
+        }
+        .container {
+            padding: 0;
+        }
+    }
+
+    .build_steps_list {
+        svg {
+            display: none;
+        }
+    }
+    .build_steps_item {
+        flex-basis: 100%;
+        text-align: center;
+    }
+}

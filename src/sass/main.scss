@@ -1,0 +1,107 @@
+@import "swiper/css/bundle";
+
+@import "./mixins";
+@import "./variables";
+@import "./fonts";
+@import "./reset";
+@import "./icons";
+
+// components
+@import "./components/header";
+@import "./components/virtual_reality";
+@import "./components/contacts";
+@import "./components//introduction";
+@import "./components/build";
+@import "./components/technologies";
+@import "./components/build_steps";
+@import "./components/join";
+@import "./components/footer";
+
+body {
+    font-family: "Montserrat", sans-serif;
+    background-color: $backgroundColor;
+    color: $bodyColor;
+    line-height: 1.25;
+    font-size: 16px;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 1315px;
+    max-width: 100%;
+    padding: 0 15px;
+    margin: 0 auto;
+    @include tablet {
+        padding: 0 20px;
+    }
+}
+
+.btn {
+    border-radius: 40px;
+    padding: 10px 37px;
+    min-height: 48px;
+    background: linear-gradient(90deg, #8176af 0%, #c0b7e8 100%);
+    display: inline-flex;
+    align-items: center;
+    color: #343045;
+    font-weight: 700;
+    font-size: 12px;
+
+    &--outline {
+        border: 2px solid #fff;
+        background: transparent;
+        color: #fff;
+
+        &:hover {
+            border-color: #8176af;
+        }
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next {
+        display: none;
+        @include tablet {
+            display: block;
+        }
+    }
+
+    &:hover {
+        background: linear-gradient(90deg, #c0b7e8 0%, #8176af 100%);
+    }
+}
+
+.overley {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 4;
+
+    &.active {
+        display: block;
+    }
+}
+
+.title {
+    font-size: 36px;
+    font-weight: 700;
+    span {
+        font-weight: 300;
+    }
+    &_svg {
+        margin-left: 20px;
+        vertical-align: middle;
+    }
+    @include tablet {
+        font-size: 26px;
+        &_svg {
+            display: none;
+        }
+    }
+}
+
+img {
+    max-width: 100%;
+}

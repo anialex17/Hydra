@@ -1,0 +1,110 @@
+.section-introduction{
+    position: relative;
+    &::after,
+    &::before {
+        content: "";
+        left: 0;
+        right: 0;
+        bottom: 0;
+        position: absolute;
+        z-index: 1;
+        background-repeat: no-repeat;
+        background-position: center 0;
+        @include tablet{
+            display: none;
+        }
+        
+    }
+    &::before {
+        top: 10%;
+        background-image: url("../assets/images/footer-bg1.svg");
+    }
+    &::after {
+        top: 50%;
+        background-image: url("../assets/images/footer-bg2.svg");
+    }
+}
+
+
+.introduction {
+    position: relative;
+    z-index: 2;
+    margin-bottom: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &_title {
+        flex-basis: 50%;
+    }
+    &_text {
+        flex-basis: 50%;
+    }
+}
+
+@include tablet {
+    .introduction {
+        display: block;
+        text-align: center;
+        margin-top: 60px;
+        margin-bottom: 40px;
+        &_text {
+            display: none;
+        }
+    }
+}
+
+.about {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 110px;
+
+    &_content {
+        flex-basis: 50%;
+        &_title {
+            margin-bottom: 40px;
+        }
+        &_text {
+            margin-bottom: 28px;
+        }
+    }
+    &_img {
+        flex-basis: 50%;
+        margin-right: 108px;
+        width: 524px;
+        height: 557px;
+        object-fit: contain;
+    }
+}
+
+@include tablet {
+    .about {
+        display: block;
+        text-align: center;
+        margin-bottom: 60px;
+        &_content {
+            &_title {
+                display: none;
+            }
+            &_text{
+                margin-bottom: 34px;
+                font-size: 12px;
+                text-align: left;
+                font-weight: 300;
+                line-height: 1.5;
+            }
+            .btn{
+                padding: 19px 63px;
+            }
+        }
+        &_img{
+            width: 336px;
+            height: 358px;
+            margin-right: 0;
+            margin-bottom: 50px;
+        }
+    }
+}

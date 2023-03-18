@@ -1,0 +1,147 @@
+.section-virtual-reality {
+    @include tablet {
+        overflow: hidden;
+    }
+}
+
+.virtual-reality {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 120px;
+
+    @include tablet {
+        margin-top: 60px;
+        display: block;
+    }
+
+    &_content {
+        position: relative;
+        padding-top: 50px;
+        z-index: 2;
+        order: -1;
+
+        @include tablet {
+            text-align: center;
+            .btn {
+                padding: 17px 68px;
+            }
+        }
+
+        &_title {
+            font-weight: 700;
+            font-size: 40px;
+            margin-bottom: 35px;
+
+            span {
+                @include text-gradient;
+                @include tablet {
+                    font-size: 36px;
+                }
+            }
+            @include tablet {
+                font-size: 24px;
+            }
+        }
+        &_text {
+            font-size: 16px;
+            font-weight: 400;
+            margin-bottom: 66px;
+            @include tablet {
+                display: none;
+            }
+        }
+
+        &_icon {
+            vertical-align: bottom;
+            margin-left: 40px;
+            @include tablet {
+                display: none;
+            }
+        }
+    }
+
+    &_images {
+        width: 524px;
+        height: 455px;
+        flex-shrink: 0;
+        @include tablet {
+            width: 340px;
+            height: 296px;
+            margin: 0 auto;
+        }
+        .reality-style-1,
+        .reality-style-2,
+        &::after,
+        &::before {
+            right: 0;
+            bottom: 0;
+            position: absolute;
+            z-index: 1;
+            background-repeat: no-repeat;
+        }
+        &::after,
+        &::before {
+            content: "";
+        }
+        &::after {
+            top: 0;
+            left: 0;
+            background-size: contain;
+            background-image: url("../assets/images/bg-vec4.svg");
+        }
+        &::before {
+            top: 0;
+            right: -5%;
+            background-image: url("../assets/images/bg-vec3.svg");
+            background-position-x: 100%;
+            background-position-y: 40%;
+            width: 100%;
+            height: 200%;
+        }
+        .reality-style-1 {
+            top: -25%;
+            right: 0;
+            background-image: url("../assets/images/bg-vec1.svg");
+            background-position-x: 100%;
+            width: 100%;
+            height: 200%;
+        }
+        .reality-style-2 {
+            top: -60%;
+            right: 9%;
+            background-image: url("../assets/images/bg-vec2.svg");
+            background-position-x: 100%;
+            background-position-y: 20%;
+            width: 100%;
+            height: 200%;
+        }
+        &_image {
+            position: relative;
+            z-index: 2;
+            max-width: 100%;
+            border-radius: 100px 100px 110px 250px;
+            box-shadow: 0px 0px 0px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        @include tablet {
+            &::after {
+                display: none;
+            }
+            &::before {
+                top: -10%;
+                right: 5%;
+            }
+            .reality-style-1 {
+                top: -20%;
+                right: -25%;
+            }
+            .reality-style-2 {
+                top: -50%;
+                right: 0%;
+            }
+        }
+    }
+}
